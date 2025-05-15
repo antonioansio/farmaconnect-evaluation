@@ -30,6 +30,7 @@ const TableRow = memo(
         padding: "0 10px",
         borderBottom: "1px solid #eee",
       }}
+      className="hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
     >
       {columns.map((column: Column<T>) => (
         <div
