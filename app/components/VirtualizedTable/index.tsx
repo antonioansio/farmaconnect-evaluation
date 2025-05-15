@@ -155,14 +155,15 @@ const VirtualizedTable = memo(
                   willChange: "transform",
                 }}
               >
-                {visibleRows.map((row) => (
+                {visibleRows.map((row, index) => (
                   <TableRow
                     key={row.id}
                     row={row}
                     columns={columns}
                     totalWidth={totalWidth}
                     rowHeight={rowHeight}
-                    index={startIndex + visibleRows.indexOf(row)}
+                    index={startIndex + index}
+                    isLastRow={startIndex + index === totalRows - 1}
                   />
                 ))}
               </div>

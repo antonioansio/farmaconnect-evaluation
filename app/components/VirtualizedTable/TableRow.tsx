@@ -13,6 +13,7 @@ type TableRowProps<T extends Record<string, ReactNode>> = {
   totalWidth: number;
   rowHeight: number;
   index: number;
+  isLastRow?: boolean;
 };
 
 const TableRow = memo(
@@ -21,6 +22,7 @@ const TableRow = memo(
     columns,
     totalWidth,
     rowHeight,
+    isLastRow,
   }: TableRowProps<T>) => (
     <div
       style={{
@@ -28,7 +30,7 @@ const TableRow = memo(
         display: "flex",
         alignItems: "center",
         padding: "0 10px",
-        borderBottom: "1px solid #eee",
+        borderBottom: isLastRow ? "none" : "1px solid #eee",
       }}
       className="hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
     >
