@@ -14,6 +14,10 @@ const columns = [
   { key: "username", label: "Username", width: 150 },
   { key: "age", label: "Age", width: 80 },
   { key: "gender", label: "Gender", width: 100 },
+  { key: "phone", label: "Phone", width: 150 },
+  { key: "birthDate", label: "Birth Date", width: 150 },
+  { key: "weight", label: "Weight", width: 150 },
+  { key: "height", label: "Height", width: 150 },
 ];
 
 export default function Home() {
@@ -27,7 +31,7 @@ export default function Home() {
   return (
     <main className="p-4">
       <h1 className="text-xl font-bold mb-4">FarmaConnect (Evaluation)</h1>
-      <VirtualizedTable data={users} columns={columns} height={600} />
+      <VirtualizedTable data={users} columns={columns} height={400} />
     </main>
   );
 }
