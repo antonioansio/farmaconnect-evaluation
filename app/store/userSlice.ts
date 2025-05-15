@@ -45,7 +45,7 @@ const userSlice = createSlice({
       })
       .addCase(fetchUsers.rejected, (state, action) => {
         state.status = "failed";
-        state.error = action.error.message || "Error al cargar usuarios";
+        state.error = action.error.message || "Error fetching users";
       });
   },
 });
