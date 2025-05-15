@@ -27,7 +27,7 @@ const VirtualizedTable = memo(
   <T extends Record<string, ReactNode> & { id: number }>({
     data,
     columns,
-    rowHeight = 40,
+    rowHeight = 50,
     height = 400,
   }: Props<T>) => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -151,7 +151,7 @@ const VirtualizedTable = memo(
               <div
                 style={{
                   transform: `translateY(${offsetY}px)`,
-                  transition: isScrolling ? "none" : "transform 0.01s ease-out",
+                  transition: isScrolling ? "none" : "transform 300ms ease-out",
                   willChange: "transform",
                 }}
               >
