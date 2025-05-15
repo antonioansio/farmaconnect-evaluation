@@ -14,6 +14,7 @@ type TableRowProps<T extends Record<string, ReactNode>> = {
   rowHeight: number;
   index: number;
   isLastRow?: boolean;
+  isScrolling?: boolean;
 };
 
 const TableRow = memo(
@@ -23,6 +24,7 @@ const TableRow = memo(
     totalWidth,
     rowHeight,
     isLastRow,
+    isScrolling,
   }: TableRowProps<T>) => (
     <div
       style={{
@@ -32,7 +34,11 @@ const TableRow = memo(
         padding: "0 10px",
         borderBottom: isLastRow ? "none" : "1px solid #eee",
       }}
-      className="hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
+      className={
+        !isScrolling
+          ? "hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
+          : ""
+      }
     >
       {columns.map((column: Column<T>) => (
         <div

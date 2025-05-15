@@ -164,6 +164,7 @@ const VirtualizedTable = memo(
                     rowHeight={rowHeight}
                     index={startIndex + index}
                     isLastRow={startIndex + index === totalRows - 1}
+                    isScrolling={isScrolling}
                   />
                 ))}
               </div>
