@@ -46,7 +46,14 @@ const TableRow = memo(
             justifyContent: "flex-start",
           }}
         >
-          {column.key.split(".").reduce((obj: any, key) => obj?.[key], row)}
+          {
+            column.key.split(".").reduce<unknown>((obj, key) => {
+              if (obj && typeof obj === "object" && key in obj) {
+                return (obj as Record<string, unknown>)[key];
+              }
+              return undefined;
+            }, row as unknown) as ReactNode
+          }
         </div>
       ))}
     </div>
